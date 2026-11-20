@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>自己紹介 | Takushoku University</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Yu Gothic", "Meiryo", sans-serif;
@@ -14,18 +18,28 @@
       color: #263445;
       background: #f2f5f9;
     }
+
     header {
       padding: 65px 20px;
       text-align: center;
       color: white;
       background: linear-gradient(135deg, #24476b, #3979a8);
     }
-    header h1 { margin: 0; font-size: 2.2rem; }
-    header p { margin: 10px 0 0; }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+    }
+
     main {
       width: min(90%, 760px);
       margin: 35px auto;
     }
+
     section {
       margin-bottom: 22px;
       padding: 25px;
@@ -33,21 +47,60 @@
       border-radius: 12px;
       box-shadow: 0 3px 12px #0000000c;
     }
+
     h2 {
       margin-top: 0;
       color: #28577e;
       border-bottom: 2px solid #dce8f1;
       padding-bottom: 8px;
     }
+
+    /* 个人介绍左右布局 */
+    .profile-layout {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .profile-text {
+      flex: 1;
+    }
+
+    /* 右侧个人头像 */
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 4px 15px #00000020;
+      flex-shrink: 0;
+    }
+
     footer {
       padding: 20px;
       text-align: center;
       color: #667788;
       font-size: 0.9rem;
     }
+
+    /* 手机屏幕适配 */
+    @media (max-width: 600px) {
+      .profile-layout {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .profile-image {
+        width: 160px;
+        height: 160px;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>自己紹介</h1>
     <p>拓殖大学 工学部 情報工学科</p>
@@ -55,27 +108,45 @@
   </header>
 
   <main>
+
+    <!-- プロフィール -->
     <section>
-      <h2>プロフィール</h2>
-      <p>こんにちは。拓殖大学工学部情報工学科で学んでいます。</p>
-      <p>大学では、情報工学やプログラミングについて勉強しています。</p>
+      <div class="profile-layout">
+
+        <div class="profile-text">
+          <h2>プロフィール</h2>
+          <p>こんにちは。拓殖大学工学部情報工学科で学んでいます。</p>
+          <p>大学では、情報工学やプログラミングについて勉強しています。</p>
+        </div>
+
+        <img
+          src="images/profile.png"
+          alt="プロフィール画像"
+          class="profile-image"
+        >
+
+      </div>
     </section>
 
+    <!-- 趣味・関心 -->
     <section>
       <h2>趣味・関心</h2>
       <p>コンピュータ、人工知能、ロボット技術に興味があります。</p>
       <p>新しい技術を学び、自分の知識やスキルを高めていきたいです。</p>
     </section>
 
+    <!-- これからの目標 -->
     <section>
       <h2>これからの目標</h2>
       <p>大学で専門知識を身につけ、将来は人工知能やロボットに関する研究に取り組みたいと考えています。</p>
     </section>
+
   </main>
 
   <footer>
     <p>拓殖大学 工学部 情報工学科</p>
     <p>Thank you for visiting!</p>
   </footer>
+
 </body>
 </html>
